@@ -1,6 +1,7 @@
+import base64
 import os
 import subprocess
-import base64
+
 
 def init_or_update_repo(repo_name):
     """
@@ -18,7 +19,7 @@ def init_or_update_repo(repo_name):
     git_user_email = base64.b64decode(encoded_email).decode()
     remote_url = f"git@github.com:{github_username}/{repo_name}.git"
     readme_content = f"# {repo_name}\n\nThis is an auto-generated repository."
-    
+
     # Define work folder with lowercase and no spaces
     work_folder = os.path.join(os.getcwd(), "kyos_work_folder")
     os.makedirs(work_folder, exist_ok=True)  # Ensure the work folder exists
@@ -77,8 +78,3 @@ def init_or_update_repo(repo_name):
         print(f"An error occurred: {e}")
     finally:
         os.chdir(os.path.dirname(work_folder))  # Return to the original directory
-
-# Example usage
-if __name__ == "__main__":
-    repo_name = "example-repo"
-    init_or_update_repo(repo_name)
