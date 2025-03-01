@@ -1,13 +1,14 @@
-# Kyoichi AI Agent
+# AI Coding Agent
 
-Kyoichi is an AI agent inspired by and named after my friend Kyoichi, an artist with a creative flair. This project is designed to assist with automating tasks, managing repositories, and enhancing productivity, much like Devin AI.
+This project is an AI coding agent designed to interact directly with GitHub.com. It collaborates seamlessly with a supervisor agent to automatically finish coding tasks, streamline repository management, and boost productivity.
 
 ## Features
 
-- **GitHub Repository Management**: Automatically checks, clones, creates, and updates repositories.
-- **Directory Organization**: All repositories are neatly stored in a dedicated folder structure (`kyos_work_folder`).
-- **Automated Git Configuration**: Simplifies Git operations by auto-configuring user details and performing commits.
-- **Error Handling**: Gracefully handles errors during Git and GitHub operations.
+- **GitHub Integration**: Interacts directly with GitHub to check, clone, create, and update repositories.
+- **Repository Organization**: Maintains a structured folder hierarchy for all your projects.
+- **Automated Git Configuration**: Simplifies Git operations by auto-configuring user details and managing commits.
+- **Error Handling**: Provides robust error handling during Git and GitHub operations.
+- **Supervisor Agent Collaboration**: Works alongside a supervisor agent to ensure continuous automation and coding completion.
 
 ## Getting Started
 
@@ -21,29 +22,8 @@ Kyoichi is an AI agent inspired by and named after my friend Kyoichi, an artist 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/<your-github-username>/kyoichi-ai-agent.git
-   cd kyoichi-ai-agent
+   git clone https://github.com/<your-github-username>/ai-coding-agent.git
+   cd ai-coding-agent
    ```
 
 2. Install dependencies (if any).
-
-3. Make sure `gh` is authenticated to your GitHub account:
-   ```bash
-   gh auth login
-   ```
-
-### Usage
-
-Run the script to manage your GitHub repositories:
-```bash
-python3 script.py
-```
-
-### Example
-
-To create or update a repository named `example-repo`:
-```bash
-python3 script.py
-```
-
-Kyoichi AI will ensure the repository exists on GitHub and is synchronized locally.
