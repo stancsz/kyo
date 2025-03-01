@@ -9,7 +9,9 @@ def is_text_file(file_path):
         return False
 
 def get_text_files(directory):
-    for root, _, files in os.walk(directory):
+    for root, dirs, files in os.walk(directory):
+        # Remove directories that start with "."
+        dirs[:] = [d for d in dirs if not d.startswith(".")]
         for file in files:
             full_path = os.path.join(root, file)
             if is_text_file(full_path):
