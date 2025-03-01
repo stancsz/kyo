@@ -18,16 +18,18 @@ def get_text_files(directory):
                 yield full_path
 
 def main():
-    directory = input("Input a directory: ").strip()
+    directory = input("Enter directory for text files: ").strip()
+    if not os.path.isdir(directory):
+        print(f"Error: The directory '{directory}' does not exist.")
+        return
     for file_path in get_text_files(directory):
-        print(f"# FILE: {file_path}")
+        print(f"\n=== FILE PATH: {file_path} ===\n")
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
+            print(content)
         except Exception as e:
-            content = f"<Error reading file: {e}>"
-        print(content)
-        print()  # blank line between files
+            print(f"<Error reading file: {e}>")
 
 if __name__ == "__main__":
     main()
